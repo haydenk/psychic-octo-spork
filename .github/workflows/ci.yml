@@ -11,4 +11,4 @@ jobs:
     environment: development
     steps:
       - name: Show Environment
-        run: ${{ job.deploy.environment }}
+        run: echo ${{ job.deploy.environment }}
