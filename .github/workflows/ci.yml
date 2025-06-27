@@ -4,6 +4,17 @@ on:
     branches:
       - master
       - develop
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "The environment to deploy to"
+        required: true
+        default: "develop"
+        type: choice
+        options:
+          - develop
+          - staging
+          - production
 jobs:
   deploy:
     runs-on: ubuntu-latest
