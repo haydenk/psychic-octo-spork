@@ -18,7 +18,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: ${{ github.ref_name == 'master' && 'production' || 'development' }}
+    environment: ${{ inputs.environment || (github.ref_name == 'master' && 'production' || 'development') }}
     steps:
       - name: Show Environment
         run: echo ${{ vars.TEST }}
