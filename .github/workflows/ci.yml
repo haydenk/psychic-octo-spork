@@ -11,4 +11,4 @@ jobs:
     environment: development
     steps:
       - name: Show Environment
-        run: echo ${{ job.deploy.environment }}
+        run: echo ${{ vars.TEST }}
