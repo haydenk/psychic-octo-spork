@@ -1,0 +1,14 @@
+name: Environment Testing Workflow
+on:
+  push:
+    branches:
+      - master
+      - develop
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.ref_name == 'develop' }}
+    environment: development
+    steps:
+      - name: Show Environment
+        run: ${{ job.deploy.environment }}
