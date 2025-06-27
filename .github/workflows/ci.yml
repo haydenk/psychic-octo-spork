@@ -7,8 +7,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.ref_name == 'develop' }}
-    environment: development
+    environment: ${{ github.ref_name == 'master' && 'production' || 'development' }}
     steps:
       - name: Show Environment
         run: echo ${{ vars.TEST }}
