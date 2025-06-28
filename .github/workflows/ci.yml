@@ -21,4 +21,6 @@ jobs:
     environment: ${{ inputs.environment || (github.ref_name == 'master' && 'production' || 'development') }}
     steps:
       - name: Show Environment
-        run: echo ${{ vars.TEST }}
+        run: |
+          echo ${{ vars.TEST }}
+          echo ${{ env.GITHUB_REPOSITORY }}
