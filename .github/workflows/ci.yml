@@ -23,5 +23,7 @@ jobs:
       - name: Show Environment
         run: |
           echo ${{ vars.TEST }}
-          echo ${{ vars.GITHUB_REPOSITORY }}
+          echo ${{ env.SSH_GITHUB_REPOSITORY }}
           echo $GITHUB_REPOSITORY
+        env:
+          SSH_GITHUB_REPOSITORY: "git@github.com:${GITHUB_REPOSITORY}.git"
